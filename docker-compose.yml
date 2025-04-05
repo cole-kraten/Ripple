@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    container_name: pebs-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=pebs-online
+    networks:
+      - pebs-network
+
+  # Backend API service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pebs-backend
+    restart: always
+    ports:
+      - "0.0.0.0:3001:3001"
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - MONGODB_URI=mongodb://pebs-mongodb:27017/pebs
+      - JWT_SECRET=your_jwt_secret_key_here
+      - JWT_EXPIRE=7d
+      - COOKIE_EXPIRE=7
+      - FRONTEND_URL=http://localhost:3000
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - pebs-network
+
+  # Frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pebs-frontend
+    restart: always
+    ports:
+      - "0.0.0.0:3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - pebs-network
+
+  # MongoDB Express web interface
+  mongo-express:
+    image: mongo-express:latest
+    container_name: pebs-mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=pebs-mongodb
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=pass
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+      - ME_CONFIG_SITE_BASEURL=/
+    depends_on:
+      - mongodb
+    networks:
+      - pebs-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  pebs-network:
+    driver: bridge 
