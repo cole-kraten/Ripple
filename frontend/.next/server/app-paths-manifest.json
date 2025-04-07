@@ -1,10 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/login/page": "app/login/page.js",
-  "/users/page": "app/users/page.js",
-  "/exchanges/page": "app/exchanges/page.js",
-  "/signup/page": "app/signup/page.js",
-  "/about/page": "app/about/page.js",
-  "/test/page": "app/test/page.js",
-  "/health/page": "app/health/page.js"
-}
+{}
