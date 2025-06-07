@@ -1,4 +1,4 @@
-# Ripple Exchange Platform
+# 🌊 Ripple 🌊
 
 Ripple is a web application that helps facilitate the communal recognition of labor. The system is inspired by Becky Chambers' "Monk and Robot" series, in which the concept of "pebs" was first introduced.
 
