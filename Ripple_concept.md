@@ -1,4 +1,4 @@
-# Ripple: A Community-Based Exchange System
+# Ripple & Pebs (as defined in the book)
 
 ## Basic Definition
 - "Pebs" is short for "digital pebbles"
