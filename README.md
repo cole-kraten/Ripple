@@ -12,7 +12,7 @@ Pebs acknowledge the many ways we all benefit from the labor of those in our com
 
 > *"The farmer feeds the musician, who brings music to the village. The technician who took a break to enjoy the music now has the energy to go fix the communications tower. The communications tower enables the meteorologist to deliver the weather report, which helps the farmer grow more apples."*
 
-The goal of pebs is to ritualize the process of recognizing how we benefit from others' labor and giving thanks for it. When you benefit from someone's labor, you give them pebs—saying "thank you, I see you." When you provide something to others, you receive pebs for the same reason.
+The goal of pebs is to ritualize the process of recognizing how we benefit from others' labor and giving thanks for it. When you benefit from someone's labor, you give them pebs as a way of saying "thank you, I see you." When you provide something to others, you receive pebs for the same reason.
 
 ## What happens if your account goes negative?
 
@@ -29,7 +29,7 @@ Becky Chambers said it best through sibling Dex:
 
 ## Prerequisites
 
-- Docker and Docker Compose installed on your machine
+- Docker and Docker Compose are installed on your machine
 - Git
 
 ## Getting Started
