@@ -4,7 +4,7 @@ Ripple is a web application that helps facilitate the communal recognition of la
 
 ## Are pebs a currency?
 
-**No.** Pebs are not a currency. Currency creates barriers to access—if you want this bread, you must relinquish X money. Pebs don't work like this.
+**No.** Pebs are not a currency. Currency creates barriers to access for resources. Pebs don't work like this.
 
 ## So if they aren't currency... what are they?
 
